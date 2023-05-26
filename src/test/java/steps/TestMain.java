@@ -34,8 +34,13 @@ public class TestMain{
 		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
 	}
 	
+	@BeforeStep
+	public void pageObject(){
+		page = new Page(driver);
+	}
 	
-	@AfterClass
+	
+	@After
 	public void closeApp() {
 		driver.quit();
 	}
